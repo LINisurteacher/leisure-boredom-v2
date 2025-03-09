@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測驗結果 - 你非常會玩！</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #444;
+        }
+
+        .result-text {
+            font-size: 20px;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d9534f;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>測驗結果</h1>
+        <p class="score" id="scoreText"></p>
+        <p class="result-text">你有點無聊齁，留下聯絡方式，以後約你!</p>
+
+        <!-- 插入圖片 -->
+        <img src="C.png" alt="活力休閒">
+
+        <!-- 返回按鈕 -->
+        <a href="index.html" class="back-button">再測一次</a>
+    </div>
+
+    <script>
+        // 讀取網址中的分數
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("scoreText").textContent = `你的總分：${params.get("score")}`;
+    </script>
+
+</body>
+</html>
